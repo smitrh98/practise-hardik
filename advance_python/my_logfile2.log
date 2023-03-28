@@ -1,0 +1,5 @@
+ 6 -- root --    DEBUG-- 2023-03-27 16:07:40,824 -- Hardik, This is DEBUG  logging message. For you.. 
+ 7 -- root --     INFO-- 2023-03-27 16:07:40,825 -- This is INFO logging message. 
+ 8 -- root --  WARNING-- 2023-03-27 16:07:40,825 -- This is WARNING logging message. 
+ 9 -- root --    ERROR-- 2023-03-27 16:07:40,825 -- This is ERROR logging message. 
+10 -- root -- CRITICAL-- 2023-03-27 16:07:40,825 -- This is CRITICAL logging message. 
