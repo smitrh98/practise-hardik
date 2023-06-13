@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>two dates fall on the exact same day</title>
+</head>
+<body>
+    <script>
+        function myFunction(a,b){
+            return (Math.abs(a-b))/60/60/24/1000 == 0;
+        }
+        alert(myFunction(new Date('2001/01/01'), new Date('2000/01/01')));
+    </script>
+</body>
+</html>

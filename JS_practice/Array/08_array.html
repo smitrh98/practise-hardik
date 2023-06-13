@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sum of an array of numbers</title>
+</head>
+<body>
+    <script>
+        function myFunction(arr){
+            // let sum = 0;
+            // arr.forEach(x => {sum +=x;});
+            // return sum;
+            sum = arr.reduce(function(x,y){return x+y},0)
+            return sum;
+        }
+        alert(myFunction([10,30,50,60,90]));
+    </script>
+</body>
+</html>
