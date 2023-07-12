@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SignUp Page</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        background-color: rgb(3, 3, 52);
+        color: yellow;
+      }
+      thead {
+        text-align: left;
+        background-color: rgb(218, 91, 0);
+      }
+      tfoot {
+        text-align: right;
+        background-color: rgb(218, 91, 0);
+      }
+      td {
+        padding: 10px;
+      }
+      #submit {
+        background-color: green;
+        padding: 10px;
+      }
+      #cancel {
+        background-color: red;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <form action="">
+        <thead>
+          <tr>
+            <td colspan="2">Sign Up</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <label for="fname">First Name</label>
+            </td>
+            <td>
+              <input type="text" name="fname" placeholder="Enter First Name" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="lname">Last Name</label>
+            </td>
+            <td>
+              <input type="text" name="lname" placeholder="Enter Last Name" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="DOB">Date of Birth</label>
+            </td>
+            <td>
+              <input type="date" name="DOB" id="DOB" />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="gender">Gender</label>
+            </td>
+            <td>
+              <input type="radio" name="male" id="gender" />
+              <label for="male">Male</label>
+              <input type="radio" name="female" id="gender" />
+              <label for="female">Female</label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="country">Country</label>
+            </td>
+            <td>
+              <select name="country" id="country">
+                <option value="India" selected>India</option>
+                <option value="USA">USA</option>
+                <option value="Canada">Canada</option>
+                <option value="Briten">Briten</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="email">E-mail</label>
+            </td>
+            <td>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter Email"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="phone">Phone</label>
+            </td>
+            <td>
+              <input
+                type="tel"
+                name="phone"
+                id="phone"
+                placeholder="Enter Phone"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="pwd">Password</label>
+            </td>
+            <td>
+              <input type="password" name="pwd" id="pwd" />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="cpwd"></label><label for="pwd">Password</label></td>
+            <td>
+              <input type="text" name="cpwd" id="cpwd" />
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" name="terms" id="terms" />
+              <label for="terms">I am agree with terms & Conditions.</label>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" id="btn">
+              <input type="submit" value="Submit" id="submit" />
+              <input type="button" value="Cancel" id="cancel" />
+            </td>
+          </tr>
+        </tfoot>
+      </form>
+    </table>
+  </body>
+</html>
