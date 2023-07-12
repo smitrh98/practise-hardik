@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove a specific array element</title>
+</head>
+<body>
+    <script>
+        function myFunction(a,b){
+            // x = a.indexOf(b);
+            // a.splice(x,1);
+            // return a;
+            newarr = a.filter(function(a){ return a !== b});
+            return newarr;
+        }
+        alert(myFunction([1,2,'2'], '2'));
+    </script>
+</body>
+</html>

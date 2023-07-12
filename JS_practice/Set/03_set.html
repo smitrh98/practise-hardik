@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get union of two sets</title>
+</head>
+<body>
+    <script>
+        function myFunction(a,b){
+            return  new Set([...a, ...b]);
+            // const result = new Set(a);
+            // b.forEach((el) => result.add(el));
+            // return result;
+        }
+        console.log(myFunction(new Set('123'), new Set('234')));
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>str to abbrev</title>
+</head>
+<body>
+    <p>String to abbreviated form</p>
+    <script>
+        console.log(abbrev_name("Robin Singh"));
+        function abbrev_name(str1){
+            var split_names= str1.trim().split(" ");
+            if(split_names.length>1){
+                // return split_names[0] +" "+ split_names[1].split("")[0]+".";
+                return split_names[0] +" "+ split_names[1].charAt(0)+".";                
+            }
+            return split_names[0];
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize firat letter</title>
+</head>
+<body>
+    <p>Capitalize first letter of each word in string.</p>
+    <script>
+        console.log(capitalize("Lorem ipsum is placeholder text commonly used in the graphic, print, and publishing industries for previewing layouts and visual mockups."))
+        function capitalize(str1){
+            // const str1 = 'i have learned something new today';
+            const arr = str1.split(" ");
+            for(let i=0; i<arr.length; i++){
+                arr[i]= arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+            }
+            const str2= arr.join(" ");
+            return str2;
+            // console.log(str2);
+        }
+    </script>
+</body>
+</html>
