@@ -15,12 +15,12 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="static/taskpage/style.css" />
+    <link rel="stylesheet" href="{% static 'taskpage/style.css' %}" />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="static/taskpage/main.js" defer></script>
+    <script src="{% static 'taskpage/main.js' %}" defer></script>
   </head>
   <body>
-    {{name}}
+    {{name}} {{n}}
     <div class="container gx-0">
       <div class="row gx-0">
         <div class="col d-flex align-items-center">
@@ -252,7 +252,7 @@
                     <div class="row gx-4">
                       <div class="col-3">
                         <img
-                          src="static/taskpage/images/profile_svg.svg"
+                          src="{% static 'taskpage/images/profile_svg.svg' %}"
                           height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
@@ -261,7 +261,7 @@
                       </div>
                       <div class="col-3">
                         <img
-                          src="static/taskpage/images/telegram_svg.svg"
+                          src="{% static 'taskpage/images/telegram_svg.svg' %}"
                           height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
@@ -270,7 +270,7 @@
                       </div>
                       <div class="col-3">
                         <img
-                          src="static/taskpage/images/twitter_svg.svg"
+                          src="{% static 'taskpage/images/twitter_svg.svg' %}"
                           height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
@@ -283,7 +283,7 @@
               </div>
               <div class="col-md-4 d-md-block d-none my-3">
                 <img
-                src="static/taskpage/images/personImage.jpeg"
+                  src="{% static 'taskpage/images/personImage.jpeg' %}"
                   style="width: 70%; border-radius: 20px"
                   class="img-fluid"
                   alt="Preson"
@@ -317,7 +317,7 @@
                     <div class="row gx-4">
                       <div class="col-3">
                         <img
-                        src="static/taskpage/images/whatsapp_svg.svg"
+                          src="{% static 'taskpage/images/whatsapp_svg.svg' %}"
                           height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
@@ -326,8 +326,8 @@
                       </div>
                       <div class="col-3">
                         <img
-                        src="static/taskpage/images/email_svg.svg.svg"
-                                                    height="40"
+                          src="{% static 'taskpage/images/email_svg.svg' %}"
+                          height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
                           alt=""
@@ -335,7 +335,7 @@
                       </div>
                       <div class="col-3">
                         <img
-                        src="static/taskpage/images/mesanger_svg.svg"
+                          src="{% static 'taskpage/images/mesanger_svg.svg' %}"
                           height="40"
                           width="40"
                           style="margin: 16px 10px 16px 10px"
@@ -349,7 +349,7 @@
               <div class="col col-sm-12 d-md-none my-3">
                 <div class="container col-10">
                   <img
-                  src="static/taskpage/images/personImage.jpeg"
+                    src="{% static 'taskpage/images/personImage.jpeg' %}"
                     style="width: 35%; border-radius: 20px"
                     class="img-fluid"
                     alt="Preson"
@@ -362,21 +362,21 @@
                   </p>
                   <div class="col-12">
                     <img
-                    src="static/taskpage/images/profile_svg.svg"
+                      src="{% static 'taskpage/images/profile_svg.svg' %}"
                       height="40"
                       width="40"
                       style="margin: 16px 10px 16px 10px"
                       alt=""
                     />
                     <img
-                    src="static/taskpage/images/telegram_svg.svg"
+                      src="{% static 'taskpage/images/telegram_svg.svg' %}"
                       height="40"
                       width="40"
                       style="margin: 16px 10px 16px 10px"
                       alt=""
                     />
                     <img
-                    src="static/taskpage/images/twitter_svg.svg"
+                      src="{% static 'taskpage/images/twitter_svg.svg' %}"
                       height="40"
                       width="40"
                       style="margin: 16px 10px 16px 10px"
@@ -385,14 +385,14 @@
                   </div>
                   <div class="col-12">
                     <img
-                    src="static/taskpage/images/whatsapp_svg.svg"
+                      src="{% static 'taskpage/images/whatsapp_svg.svg' %}"
                       height="40"
                       width="40"
                       style="margin: 16px 10px 16px 10px"
                       alt=""
                     />
                     <img
-                    src="static/taskpage/images/email_svg.svg"
+                      src="{% static 'taskpage/images/email_svg.svg' %}"
                       height="40"
                       width="40"
                       style="margin: 16px 10px 16px 10px"
@@ -603,12 +603,20 @@
                 aria-labelledby="pills-enquire-tab"
               >
                 <div class="container my-4 gx-0">
-                  <form class="row g-3">
+                  <form
+                    method="post"
+                    action="{% url 'saveuser' %}"
+                    id="User"
+                    role="form"
+                    class="row g-3"
+                  >
+                    {% csrf_token %}
                     <div class="col-md-6">
                       <input
                         type="name"
                         class="form-control t1"
-                        id="inputname4"
+                        id="name"
+                        name="name"
                         placeholder="Name"
                       />
                     </div>
@@ -616,7 +624,8 @@
                       <input
                         type="email"
                         class="form-control t1"
-                        id="inputEmail4"
+                        id="email"
+                        name="email"
                         placeholder="Email"
                       />
                     </div>
@@ -624,13 +633,15 @@
                       <input
                         type="text"
                         class="form-control t1"
-                        id="inputPhone"
+                        id="phone"
+                        name="phone"
                         placeholder="Phone No.(optional)"
                       />
                     </div>
                     <div class="col-md-6">
                       <select
                         id="selectX"
+                        name="country"
                         class="form-select"
                         style="color: #636363"
                         aria-label="Default select example"
@@ -642,6 +653,7 @@
                       <textarea
                         class="form-control t1"
                         aria-label="With textarea"
+                        name="message"
                         placeholder="Message"
                         rows="5"
                       ></textarea>
@@ -669,6 +681,29 @@
 
                 <div class="container row row-cols-1 d-md-none text-center">
                   <div class="col">
+                    <a href="{% url 'users-listing' %}">
+                      <button type="submit" class="btn btn-outline-primary">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          fill="currentColor"
+                          viewBox="0 0 20 20"
+                        >
+                          <path
+                            d="M8.333,0V8.333H5.417L10,14.583l4.583-6.25H11.667V0ZM0,18.333V20H20V18.333Z"
+                          />
+                        </svg>
+                        Get your Card
+                      </button>
+                    </a>
+                  </div>
+                  <div class="col">
+                    <span class="t1">2023 card brought by John Doe</span>
+                  </div>
+                </div>
+                <div class="container d-none d-md-block text-center">
+                  <a href="{% url 'users-listing' %}">
                     <button type="submit" class="btn btn-outline-primary">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -683,27 +718,8 @@
                       </svg>
                       Get your Card
                     </button>
-                  </div>
-                  <div class="col">
-                    <span class="t1">2021 card brought by John Doe</span>
-                  </div>
-                </div>
-                <div class="container d-none d-md-block text-center">
-                  <button type="submit" class="btn btn-outline-primary">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        d="M8.333,0V8.333H5.417L10,14.583l4.583-6.25H11.667V0ZM0,18.333V20H20V18.333Z"
-                      />
-                    </svg>
-                    Get your Card
-                  </button>
-                  <span class="t1">2021 card brought by John Doe</span>
+                  </a>
+                  <span class="t1">2023 card brought by John Doe</span>
                 </div>
               </div>
             </div>
