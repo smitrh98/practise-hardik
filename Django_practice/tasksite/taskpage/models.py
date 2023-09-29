@@ -10,7 +10,7 @@ class User(models.Model):
     date = models.DateTimeField("Created on")
 
     def __str__(self):
-        return self.user_name
+        return self.email
 
 class Task(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -18,10 +18,7 @@ class Task(models.Model):
     description = models.CharField(max_length=200)
     date = models.DateTimeField("Created on")
     status = models.BooleanField(default=False)
-    asign = models.ManyToManyField(User, related_name='task_asign')
 
     def __str__(self):
         return self.title
 
-    def assign_user(self):
-        return ",".join([str(p) for p in self.asign.all()])
