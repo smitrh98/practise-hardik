@@ -3,12 +3,12 @@ from . import views
 
 # app_name = "taskpage"
 urlpatterns = [
-    path("", views.index, name="index"),
-    path('saveuser/', views.saveUser, name="saveuser"),
-    path('users-listing/', views.users, name='users-listing'),
-    path('<int:x>/task-listing/', views.tasks, name='task-listing'),
-    path('<int:user_id>/saveTask/', views.saveTask, name='saveTask'),
-    path('<int:task_id>/deleteTask/', views.deleteTask, name='deleteTask'),
-    path('<int:task_id>/updateTask/', views.updateTask, name='updateTask'),
+    path("user", views.Index.as_view(), name="index"),
+    path('saveusercl/', views.SaveUser.as_view(), name="saveuser"),
+    path('users-listingcl/', views.Users.as_view() , name='users-listing'),
+    path('<int:pk>/task-listingcl/', views.TasksDetail.as_view(), name='task-listing'),
+    path('<int:user_id>/saveTaskcl/', views.SaveTask.as_view(), name='saveTask'),
+    path('<int:task_id>/deleteTaskcl/', views.DeleteTask.as_view(), name='deleteTask'),
+    path('<int:task_id>/updateTaskcl/', views.UpadateTask.as_view(), name='updateTask'),
 
 ]
